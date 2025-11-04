@@ -2,3 +2,4 @@
 *.pyc
 *.log
 outputs/gradio_sessions/
+tmp/

@@ -16,11 +16,12 @@ VLLM_DIR = APP_ROOT / "DeepSeek-OCR-master" / "DeepSeek-OCR-vllm"
 
 sys.path.insert(0, str(VLLM_DIR))
 
+os.environ['GRADIO_TEMP_DIR'] = './tmp'
+
 import gradio as gr  # noqa: E402
 import config  # noqa: E402
 from run_dpsk_ocr_image import run_image_pipeline, unload_image_engines  # noqa: E402
 from run_dpsk_ocr_pdf import run_pdf_pipeline, unload_pdf_models  # noqa: E402
-
 
 SESSION_ROOT = (APP_ROOT / "outputs" / "gradio_sessions").resolve()
 SESSION_ROOT.mkdir(parents=True, exist_ok=True)
